@@ -1,0 +1,17 @@
+{
+    "users":[
+       {
+          "name":"bala",
+          "age":"25",
+          "phonenumber":"0998765446"
+       },
+       {
+         "name":"arun",
+         "age":"20",
+         "phonenumber":"09987658746"
+      }
+     ]
+ }
+
+
+

@@ -1,0 +1,9 @@
+<div *ngFor="let message of messageList">
+    <ng-container *ngIf="messageList">
+        <p>Name: {{ message.name }}</p>
+        <p>Age: {{ message.age }}</p>
+        <p>Phone Number: {{ message.phonenumber }}</p>
+    </ng-container>
+</div>
+
+<p *ngIf="!messageList">No data is selected</p>
