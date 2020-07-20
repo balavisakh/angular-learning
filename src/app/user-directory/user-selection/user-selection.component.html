@@ -1,9 +1,17 @@
-<div *ngFor="let message of messageList">
-    <ng-container *ngIf="messageList">
-        <p>Name: {{ message.name }}</p>
-        <p>Age: {{ message.age }}</p>
-        <p>Phone Number: {{ message.phonenumber }}</p>
-    </ng-container>
+
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let message of messageList" class="col-lg-6">
+            <mat-card class="mt-4">
+                <ng-container *ngIf="messageList">
+                    <p>Name: {{ message.name }}</p>
+                    <p>Age: {{ message.age }}</p>
+                    <p>Phone Number: {{ message.phonenumber }}</p>
+                </ng-container>
+            </mat-card>
+        </div>
+    </div>
 </div>
 
-<p *ngIf="!messageList">No data is selected</p>
+<mat-card *ngIf="messageList.length <=0" class="mt-5"><h4 class="text-center">No data is selected</h4></mat-card>

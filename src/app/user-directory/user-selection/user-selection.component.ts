@@ -16,7 +16,7 @@ export class UserSelectionComponent implements OnInit, OnDestroy {
   }
 
   getSelectedValues(): void {
-    this.shareService.getValue().subscribe((value) => {
+    this.subscription = this.shareService.getValue().subscribe((value) => {
       this.messageList = value;
     });
   }

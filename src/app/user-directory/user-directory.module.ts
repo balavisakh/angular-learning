@@ -7,6 +7,11 @@ import { UserListingComponent } from './user-listing/user-listing.component';
 import { UserSelectionComponent } from './user-selection/user-selection.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -16,7 +21,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CommonModule,
     UserDirectoryRoutingModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatCardModule
   ]
 })
 export class UserDirectoryModule { }

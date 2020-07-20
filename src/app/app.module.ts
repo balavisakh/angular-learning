@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 
 
@@ -34,7 +36,8 @@ import {MatIconModule} from '@angular/material/icon';
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

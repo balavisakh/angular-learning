@@ -1,13 +1,15 @@
-<p>
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <span>BALA</span>
         <span class="example-spacer"></span>
-        <p class="cursor" routerLink='userDirectory/user-list'><span>User</span></p>
-        <p><span class="ml-2">Admin</span></p>
+        <button mat-button class="example-icon" aria-label="Example icon-button with share icon" routerLink='userDirectory/user-list' routerLinkActive='active-link'>
+        <span class="header-btn">User</span>
+      </button>
+      <button mat-button class="example-icon" aria-label="Example icon-button with share icon" routerLink='adminDirectory' routerLinkActive='active-link'>
+        <span class="header-btn">Admin</span>
+      </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
+          <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
         </button>
       </mat-toolbar-row>
     </mat-toolbar>
-  </p>
