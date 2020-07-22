@@ -1,16 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import * as data from '../../assets/users.json';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private bSubject = new BehaviorSubject('');
+  constructor() {}
 
-  constructor(private http:HttpClient) { }
+  // private jsonUrl = 'assets/users.json';
 
-  private jsonUrl = 'assets/users.json';
+  // public getJson(): Observable<any>{
+  //   return this.http.get(this.jsonUrl);
+  // }
 
-  public getJson(): Observable<any>{
-    return this.http.get(this.jsonUrl);
+  users: any  = (data  as  any).default;
+  public getJson(): any{
+    return this.users;
+  }
+  sendValue(value: any): void{
+    this.bSubject.next(value);
+  }
+
+  getValue(): Observable<any>{
+    return this.bSubject.asObservable();
   }
 }

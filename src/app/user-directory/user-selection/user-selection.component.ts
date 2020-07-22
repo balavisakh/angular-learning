@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ShareService } from '../../services/share.service';
 import { Subscription } from 'rxjs';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-user-selection',
   templateUrl: './user-selection.component.html',
@@ -9,14 +9,14 @@ import { Subscription } from 'rxjs';
 export class UserSelectionComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageList: any[] = [];
-  constructor(private shareService: ShareService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getSelectedValues();
   }
 
   getSelectedValues(): void {
-    this.subscription = this.shareService.getValue().subscribe((value) => {
+    this.subscription = this.userService.getValue().subscribe((value) => {
       this.messageList = value;
     });
   }
