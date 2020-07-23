@@ -18,8 +18,11 @@ export class LoginComponent implements OnInit {
   onSubmit(): void{
     const username = this.form.get('username').value;
     const password = this.form.get('username').value;
-    if (username === 'admin' && password === 'admin'){
+    if (username === 'user' && password === 'user'){
       this.router.navigate(['userDirectory/user-list']);
+    }
+    else if (username === 'admin' && password === 'admin'){
+      this.router.navigate(['adminDirectory/admin-panel']);
     }
     else{
       alert('Username and password is wrong');

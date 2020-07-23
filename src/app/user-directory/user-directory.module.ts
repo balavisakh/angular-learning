@@ -11,8 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
-
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -25,7 +24,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
   ]
 })
 export class UserDirectoryModule { }

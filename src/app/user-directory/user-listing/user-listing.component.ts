@@ -42,7 +42,6 @@ export class UserListingComponent implements OnInit {
     const userListData = 'users';
     this.dataSource.data = jsonValue[userListData];
     this.userList = this.dataSource.data;
-    console.log(jsonValue);
   }
 
   /* Whether the number of selected elements matches the total number of rows. */
