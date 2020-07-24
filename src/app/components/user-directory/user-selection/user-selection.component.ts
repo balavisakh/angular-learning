@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-user-selection',
   templateUrl: './user-selection.component.html',
-  styleUrls: ['./user-selection.component.css']
+  styleUrls: ['./user-selection.component.css'],
 })
 export class UserSelectionComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageList: any[] = [];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.getSelectedValues();
@@ -21,8 +21,7 @@ export class UserSelectionComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void{
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }

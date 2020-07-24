@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShareService {
   private subject = new Subject();
-  constructor() { }
+  constructor() {}
 
   // sendValue(value: any): void{
   //   this.subject.next(value);

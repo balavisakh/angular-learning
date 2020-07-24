@@ -1,36 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserDirectoryModule } from './components/user-directory/user-directory.module';
+import { AdminDirectoryModule } from './components/admin-directory/admin-directory.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { LoginComponent } from './components/login/login.component';
-import {MatCardModule} from '@angular/material/card';
-
-
-
-
-
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserDirectoryModule,
+    AdminDirectoryModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -41,10 +34,10 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
 })
-export class AppModule { }
+export class AppModule {}

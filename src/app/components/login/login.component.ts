@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   constructor(private fb: FormBuilder, private router: Router) { }
   form = this.fb.group({
     username: ['', Validators.required],
@@ -15,17 +16,20 @@ export class LoginComponent implements OnInit {
   });
   ngOnInit(): void {
   }
-  onSubmit(): void{
+  onSubmit(): void {
     const username = this.form.get('username').value;
     const password = this.form.get('username').value;
-    if (username === 'user' && password === 'user'){
+    if (username === 'user' && password === 'user') {
+      localStorage.setItem('role', '1');
       this.router.navigate(['userDirectory/user-list']);
     }
-    else if (username === 'admin' && password === 'admin'){
+    else if (username === 'admin' && password === 'admin') {
+      localStorage.setItem('role', '2');
       this.router.navigate(['adminDirectory/admin-panel']);
     }
-    else{
+    else {
       alert('Username and password is wrong');
+      localStorage.clear();
     }
   }
 }

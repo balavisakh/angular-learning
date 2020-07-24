@@ -1,19 +1,16 @@
 {
-    "users":[
-       {
-          "position":"1",
-          "name":"Bala visakh",
-          "age":"25",
-          "phonenumber":"8807705552"
-       },
-       {
-         "position":"2",
-         "name":"Arun gokhul",
-         "age":"25",
-         "phonenumber":"9528160278"
-      }
-     ]
- }
-
-
-
+  "users": [
+    {
+      "position": "1",
+      "name": "Bala visakh",
+      "age": "25",
+      "phonenumber": "8807705552"
+    },
+    {
+      "position": "2",
+      "name": "Arun gokhul",
+      "age": "25",
+      "phonenumber": "9528160278"
+    }
+  ]
+}
