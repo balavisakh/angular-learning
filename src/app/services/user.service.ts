@@ -7,7 +7,7 @@ import { User } from '../entities/user.entity';
   providedIn: 'root',
 })
 export class UserService {
-  private bSubject = new BehaviorSubject('');
+  public bSubject = new BehaviorSubject('');
   constructor() {}
 
   users: User = (data as any).default;

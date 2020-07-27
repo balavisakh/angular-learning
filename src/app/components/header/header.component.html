@@ -14,8 +14,8 @@
      (click)='logout()' class="ml-2" *ngIf='logoutButtonVisibility'>
       <span class="header-btn">Logout</span>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon matBadge="{{ users.length }}" matBadgeColor="warn">notifications</mat-icon>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" >
+      <mat-icon matBadge="{{ users?.length }}" matBadgeColor="warn">notifications</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>

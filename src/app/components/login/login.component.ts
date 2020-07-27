@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,15 +26,13 @@ export class LoginComponent implements OnInit {
     const password = this.form.get('password').value;
     if (username === 'user' && password === 'user') {
       this.userRole = localStorage.setItem('role', '1');
-      this.router.navigate(['user/user-list']).then(() => {
       this.userService.sendValue(this.userRole);
-      });
+      this.router.navigate(['user/user-list']);
     }
     else if (username === 'admin' && password === 'admin') {
       this.adminRole = localStorage.setItem('role', '2');
-      this.router.navigate(['admin/admin-panel']).then(() => {
       this.userService.sendValue(this.adminRole);
-      });
+      this.router.navigate(['admin/admin-panel']);
     }
     else {
       alert('Username and password is wrong');
