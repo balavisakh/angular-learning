@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as data from '../../assets/users.json';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from '../entities/user.entity';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -8,8 +10,8 @@ export class UserService {
   private bSubject = new BehaviorSubject('');
   constructor() {}
 
-  users: any = (data as any).default;
-  public getJson(): any {
+  users: User = (data as any).default;
+  public getJson(): User {
     return this.users;
   }
   sendValue(value: any): void {
@@ -18,5 +20,12 @@ export class UserService {
 
   getValue(): Observable<any> {
     return this.bSubject.asObservable();
+  }
+
+  isUserLoggedIn(): boolean{
+    return localStorage.getItem('role') === '1';
+  }
+  isAdminLoggedIn(): boolean{
+    return localStorage.getItem('role') === '2';
   }
 }

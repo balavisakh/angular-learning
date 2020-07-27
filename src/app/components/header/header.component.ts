@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -11,16 +11,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit, OnDestroy {
   users: any;
   private subscription: Subscription;
+  logoutButtonVisibility: string;
   constructor(private userService: UserService, private router: Router) { }
-  user: any;
-  admin: any;
-  logOut: any;
   ngOnInit(): void {
-    this.user = localStorage.getItem('role') === '1';
-    this.admin = localStorage.getItem('role') === '2';
-    this.logOut = this.admin || this.user;
     this.getSelectedValues();
-    this.logout();
+    this.getLoginStatus();
+    this.logoutButtonVisibility = localStorage.getItem('role');
   }
 
   getSelectedValues(): void {
@@ -35,7 +31,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout(): void {
     localStorage.clear();
+    this.logoutButtonVisibility = null;
     this.router.navigate(['login']);
   }
 
+  getLoginStatus(): void {
+    this.userService.getValue().subscribe((value) => {
+      console.log('loginstatus', value);
+    });
+  }
 }

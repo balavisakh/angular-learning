@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserDirectoryModule } from './components/user-directory/user-directory.module';
-import { AdminDirectoryModule } from './components/admin-directory/admin-directory.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,14 +14,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { LoginComponent } from './components/login/login.component';
 import { MatCardModule } from '@angular/material/card';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserDirectoryModule,
-    AdminDirectoryModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
