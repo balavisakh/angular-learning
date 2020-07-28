@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
     if (username === 'user' && password === 'user') {
       this.userRole = localStorage.setItem('role', '1');
       this.userService.sendValue(this.userRole);
-      this.router.navigate(['user/user-list']);
+      this.router.navigate(['user']);
     }
     else if (username === 'admin' && password === 'admin') {
       this.adminRole = localStorage.setItem('role', '2');
       this.userService.sendValue(this.adminRole);
-      this.router.navigate(['admin/admin-panel']);
+      this.router.navigate(['admin']);
     }
     else {
       alert('Username and password is wrong');

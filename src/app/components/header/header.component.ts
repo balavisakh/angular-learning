@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  users: any;
+  users: any[];
+  usersLength;
   private subscription: Subscription;
   logoutButtonVisibility: string;
   constructor(private userService: UserService, private router: Router) {}
@@ -31,7 +32,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout(): void {
     localStorage.clear();
     this.logoutButtonVisibility = null;
-    this.users.length = null;
     this.router.navigate(['login']);
   }
 }
