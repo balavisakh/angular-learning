@@ -32,13 +32,19 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    this.getUserData();
+    // this.getUserData();
+    this.getUsers();
    }
 
-  getUserData(): void {
-    const jsonValue = this.userService.getJson();
-    const userListData = 'users';
-    this.users  = jsonValue[userListData];
+  // getUserData(): void {
+  //   const jsonValue = this.userService.getJson();
+  //   const userListData = 'users';
+  //   this.users  = jsonValue[userListData];
+  // }
+  getUsers(): void {
+    this.userService.getUsers().subscribe((users) => {
+      this.users = users;
+    })
   }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

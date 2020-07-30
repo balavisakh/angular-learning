@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-content>
+      <div [formGroup]='form'>
+        <h2>Add User here</h2>
+        <mat-form-field class="full-width-input">
+          <mat-label>Enter your Username</mat-label>
+          <input matInput placeholder="username" formControlName="username" required>
+          <mat-error>
+            Please provide a valid username
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+            <mat-label>Enter your Age</mat-label>
+            <input matInput placeholder="username" formControlName="username" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <mat-label>Enter your Phonenumber</mat-label>
+            <input matInput placeholder="username" formControlName="username" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+        <button class="add-user-button" mat-raised-button color="primary">Add User</button>
+      </div>
+    </mat-card-content>
+  </mat-card>

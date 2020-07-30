@@ -7,11 +7,11 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-user-listing',
-  templateUrl: './user-listing.component.html',
-  styleUrls: ['./user-listing.component.css'],
+  selector: 'app-view-users',
+  templateUrl: './view-users.component.html',
+  styleUrls: ['./view-users.component.css']
 })
-export class UserListingComponent implements OnInit {
+export class ViewUsersComponent implements OnInit {
   userList: User[];
   displayedColumns: string[] = [
     'select',
@@ -19,28 +19,21 @@ export class UserListingComponent implements OnInit {
     'name',
     'age',
     'phonenumber',
+    'actions'
   ];
   dataSource = new MatTableDataSource<User>(this.userList);
   selection = new SelectionModel<User>(true, []);
   selectedValue;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(private UserServices: UserService) {}
+  constructor(private UserServices: UserService) { }
+
   ngOnInit(): void {
-    // this.getUserData();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.getUsers();
   }
 
-  // getUserData(): void {
-  //   const jsonValue = this.UserServices.getJson();
-  //   const userListData = 'users';
-  //   this.dataSource.data = jsonValue[userListData];
-  //   this.userList = this.dataSource.data;
-  // }
-
-  /* Whether the number of selected elements matches the total number of rows. */
   isAllSelected(): boolean {
     const numSelected = this.selection.selected.length;
     this.selectedValue = this.selection.selected;
@@ -81,7 +74,7 @@ export class UserListingComponent implements OnInit {
     this.UserServices.getUsers().subscribe((users) => {
       this.userList = users;
       this.dataSource.data = this.userList;
-      console.log('users lists', this.userList);
     });
   }
+
 }

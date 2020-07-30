@@ -10,9 +10,25 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { UserManagementComponent } from './user-management/user-management.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ViewUsersComponent } from './view-users/view-users.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSortModule } from '@angular/material/sort';
+
+
+
+
+
 
 @NgModule({
-  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent],
+  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent],
   imports: [
     CommonModule,
     AdminDirectoryRoutingModule,
@@ -21,7 +37,15 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSortModule
   ]
 })
 export class AdminDirectoryModule { }

@@ -1,6 +1,6 @@
 export class User {
-  position: number;
+  position: string;
   name: string;
-  age: number;
-  phonenumber: number;
+  age: string;
+  phonenumber: string;
 }
