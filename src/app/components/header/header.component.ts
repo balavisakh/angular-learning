@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout(): void {
     localStorage.clear();
     this.logoutButtonVisibility = null;
+    this.users.length = null;
     this.router.navigate(['login']);
   }
 }

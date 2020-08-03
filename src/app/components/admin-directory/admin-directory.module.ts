@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 
@@ -28,7 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
-  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent],
+  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent, UpdateUserComponent],
   imports: [
     CommonModule,
     AdminDirectoryRoutingModule,

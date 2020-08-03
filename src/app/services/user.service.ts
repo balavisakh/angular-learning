@@ -25,14 +25,34 @@ export class UserService {
     return this.bSubject.asObservable();
   }
 
-  isUserLoggedIn(): boolean{
+  isUserLoggedIn(): boolean {
     return localStorage.getItem('role') === '1';
   }
-  isAdminLoggedIn(): boolean{
+  isAdminLoggedIn(): boolean {
     return localStorage.getItem('role') === '2';
   }
-
+  //Get all users
   getUsers(): Observable<any> {
     return this.http.get(this.api_url);
+  }
+
+  //Add User
+  addUser(body): Observable<any> {
+    return this.http.post(this.api_url + '/adduser', body);
+  }
+
+  //Delete User
+  deleteUser(userId): Observable<any> {
+    return this.http.delete(this.api_url + '/deleteuser' + '/' + userId);
+  }
+
+  //Get user by id
+  getUserById(userId) {
+    return this.http.get(this.api_url + '/edituser' + '/' + userId);
+  }
+
+  //Update User
+  updateUser(userId, body): Observable<any> {
+    return this.http.put(this.api_url + '/updateuser' + '/' + userId, body);
   }
 }

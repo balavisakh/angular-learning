@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-content>
       <div [formGroup]='form'>
-        <h2>Add User here</h2>
+        <h2>Update User here</h2>
         <mat-form-field class="full-width-input">
           <mat-label>Enter your POsition</mat-label>
           <input matInput placeholder="username" formControlName="position" required>
@@ -30,7 +30,7 @@
               Please provide a valid username
             </mat-error>
           </mat-form-field>
-        <button (click)='addUser()' [disabled]='!form.valid' class="add-user-button" mat-raised-button color="primary">Add User</button>
+        <button (click)='updateuser()' [disabled]='!form.valid' class="add-user-button" mat-raised-button color="primary">Update User</button>
       </div>
     </mat-card-content>
   </mat-card>

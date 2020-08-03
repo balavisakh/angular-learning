@@ -5,6 +5,7 @@ import { SelectionModel, DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-users',
@@ -24,16 +25,16 @@ export class ViewUsersComponent implements OnInit {
   dataSource = new MatTableDataSource<User>(this.userList);
   selection = new SelectionModel<User>(true, []);
   selectedValue;
+  userId;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(private UserServices: UserService) { }
+  constructor(private UserServices: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.getUsers();
   }
-
   isAllSelected(): boolean {
     const numSelected = this.selection.selected.length;
     this.selectedValue = this.selection.selected;
@@ -69,12 +70,27 @@ export class ViewUsersComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
+  navAddUser(): void {
+    this.router.navigate(['admin/add-user']);
+  }
+// Get users 
   getUsers(): void {
     this.UserServices.getUsers().subscribe((users) => {
       this.userList = users;
       this.dataSource.data = this.userList;
     });
   }
-
+// Delete user
+deleteUser(userId): void {
+  console.log('useriddd', userId);
+  this.UserServices.deleteUser(userId).subscribe(() => {
+    this.getUsers();
+    console.log('deleted');
+  });
+}
+// Edit user by id
+edituser(userId): void {
+  console.log('editId', userId);
+  this.router.navigate(['admin/updateuser/', userId]);
+}
 }
