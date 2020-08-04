@@ -12,7 +12,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   users: any[];
   usersLength;
   private subscription: Subscription;
-  logoutButtonVisibility: string;
+  afterLogin: string;
+  afterAdminLogin: boolean;
+  afterUserLogin: boolean;
   constructor(private userService: UserService, private router: Router) {}
   ngOnInit(): void {
     this.getSelectedValues();
@@ -21,7 +23,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   getSelectedValues(): void {
     this.subscription = this.userService.getValue().subscribe((value) => {
       this.users = value;
-      this.logoutButtonVisibility = localStorage.getItem('role');
+      this.afterLogin = localStorage.getItem('role');
+      this.afterUserLogin = (localStorage.getItem('role') === '1');
+      this.afterAdminLogin = (localStorage.getItem('role') === '2');
     });
   }
 
@@ -31,8 +35,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout(): void {
     localStorage.clear();
-    this.logoutButtonVisibility = null;
-    this.users.length = null;
+    this.afterLogin = null;
+    this.afterAdminLogin = null;
+    this.afterUserLogin = null;
     this.router.navigate(['login']);
   }
 }

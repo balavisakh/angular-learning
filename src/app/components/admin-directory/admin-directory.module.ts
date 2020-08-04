@@ -22,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 
@@ -29,7 +30,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
-  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent, UpdateUserComponent],
+  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent, UpdateUserComponent, SideNavComponent],
   imports: [
     CommonModule,
     AdminDirectoryRoutingModule,

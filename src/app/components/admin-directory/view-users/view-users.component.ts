@@ -16,8 +16,10 @@ export class ViewUsersComponent implements OnInit {
   userList: User[];
   displayedColumns: string[] = [
     'select',
-    'position',
-    'name',
+    'firstname',
+    'lastname',
+    'password',
+    'email',
     'age',
     'phonenumber',
     'actions'

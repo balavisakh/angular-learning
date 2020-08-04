@@ -15,9 +15,11 @@ export class AddUserComponent implements OnInit {
     private router: Router
   ) {}
   form = this.fb.group({
-    position: ['', Validators.required],
-    name: ['', Validators.required],
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    password: ['', Validators.required],
     age: ['', Validators.required],
+    email: ['', Validators.required],
     phonenumber: ['', Validators.required],
   });
   ngOnInit(): void {}

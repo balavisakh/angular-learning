@@ -2,19 +2,19 @@
   <mat-toolbar-row>
     <span>BALA</span>
     <span class="example-spacer"></span>
-    <button mat-button class="example-icon" aria-label="Example icon-button with share icon"
+    <button *ngIf='afterUserLogin' mat-button class="example-icon" aria-label="Example icon-button with share icon"
       routerLink='user' routerLinkActive='active-link'>
       <span class="header-btn">User</span>
     </button>
-    <button mat-button class="example-icon" aria-label="Example icon-button"
+    <button *ngIf='afterAdminLogin' mat-button class="example-icon" aria-label="Example icon-button"
       routerLink='admin' routerLinkActive='active-link'>
-      <span class="header-btn">Admin</span>
+      <span class="header-btn">Dashboard</span>
     </button>
-    <button mat-raised-button color='warn' aria-label="Example icon-button with share icon"
-     (click)='logout()' class="ml-2" *ngIf='logoutButtonVisibility'>
+    <button mat-raised-button aria-label="Example icon-button with share icon"
+     (click)='logout()' class="ml-2" *ngIf='afterLogin'>
       <span class="header-btn">Logout</span>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" >
+    <button *ngIf='afterLogin' mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon matBadge="{{ users && users.length }}" matBadgeColor="warn">notifications</mat-icon>
     </button>
   </mat-toolbar-row>
