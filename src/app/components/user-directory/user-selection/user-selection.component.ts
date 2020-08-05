@@ -8,7 +8,7 @@ import { UserService } from '../../../services/user.service';
 })
 export class UserSelectionComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  messageList: any[] = [];
+  userDetails: any[] = [];
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class UserSelectionComponent implements OnInit, OnDestroy {
 
   getSelectedValues(): void {
     this.subscription = this.userService.getValue().subscribe((value) => {
-      this.messageList = value;
+      this.userDetails = value;
     });
   }
 

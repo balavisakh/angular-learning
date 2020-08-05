@@ -15,9 +15,10 @@ export class UserListingComponent implements OnInit {
   userList: User[];
   displayedColumns: string[] = [
     'select',
-    'position',
-    'name',
+    'firstname',
+    'lastname',
     'age',
+    'email',
     'phonenumber',
   ];
   dataSource = new MatTableDataSource<User>(this.userList);

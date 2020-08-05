@@ -6,6 +6,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ShowUsersComponent } from './show-users/show-users.component';
 
 const routes: Routes = [
   { path: '', component: AdminDirectoryComponent},
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent
+  },
+  {
+    path: 'view-users',
+    component: ShowUsersComponent
   }
 ];
 

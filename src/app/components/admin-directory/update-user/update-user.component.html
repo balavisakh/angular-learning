@@ -3,29 +3,43 @@
       <div [formGroup]='form'>
         <h2>Update User here</h2>
         <mat-form-field class="full-width-input">
-          <mat-label>Enter your POsition</mat-label>
-          <input matInput placeholder="username" formControlName="position" required>
-          <mat-error>
-            Please provide a valid position
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width-input">
-          <mat-label>Enter your Username</mat-label>
-          <input matInput placeholder="username" formControlName="name" required>
+          <mat-label>Enter your firstname</mat-label>
+          <input matInput placeholder="firstname" formControlName="firstname" required>
           <mat-error>
             Please provide a valid username
           </mat-error>
         </mat-form-field>
         <mat-form-field class="full-width-input">
-            <mat-label>Enter your Age</mat-label>
-            <input matInput placeholder="username" formControlName="age" required>
+            <mat-label>Enter your lastname</mat-label>
+            <input matInput placeholder="lastname" formControlName="lastname" required>
             <mat-error>
               Please provide a valid username
             </mat-error>
           </mat-form-field>
           <mat-form-field class="full-width-input">
-            <mat-label>Enter your Phonenumber</mat-label>
-            <input matInput placeholder="username" formControlName="phonenumber" required>
+            <mat-label>Enter your password</mat-label>
+            <input matInput placeholder="password" formControlName="password" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <mat-label>Enter your age</mat-label>
+            <input matInput placeholder="password" formControlName="age" type="number" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="email" formControlName="email" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <mat-label>Enter your phonenumber</mat-label>
+            <input matInput placeholder="phonenumber" formControlName="phonenumber" type="number" required>
             <mat-error>
               Please provide a valid username
             </mat-error>

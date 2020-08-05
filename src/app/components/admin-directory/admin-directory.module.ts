@@ -23,6 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { ShowUsersComponent } from './show-users/show-users.component';
 
 
 
@@ -30,7 +31,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 @NgModule({
-  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent, UpdateUserComponent, SideNavComponent],
+  declarations: [AdminDirectoryComponent, ChartComponent, AdminPanelComponent, UserManagementComponent, AddUserComponent, ViewUsersComponent, UpdateUserComponent, SideNavComponent, ShowUsersComponent],
   imports: [
     CommonModule,
     AdminDirectoryRoutingModule,

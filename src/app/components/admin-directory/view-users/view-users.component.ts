@@ -95,4 +95,8 @@ edituser(userId): void {
   console.log('editId', userId);
   this.router.navigate(['admin/updateuser/', userId]);
 }
+
+navViewUser(): void {
+  this.router.navigate(['admin/view-users']);
+}
 }

@@ -15,12 +15,14 @@ export class UpdateUserComponent implements OnInit {
   form;
   userDetail;
   initializeForm(): void {
-  this.form = this.fb.group({
-    position: ['', Validators.required],
-    name: ['', Validators.required],
-    age: ['', Validators.required],
-    phonenumber: ['', Validators.required],
-  });
+    this.form = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      password: ['', Validators.required],
+      age: ['', Validators.required],
+      email: ['', Validators.required],
+      phonenumber: ['', Validators.required],
+    });
 }
 
   getParams(): void {
@@ -39,10 +41,12 @@ export class UpdateUserComponent implements OnInit {
     this.userService.getUserById(userId).subscribe((data) => {
       this.userDetail = data;
       this.form.patchValue({
-        position: this.userDetail.position,
-        name: this.userDetail.name,
+        firstname: this.userDetail.firstname,
+        lastname: this.userDetail.lastname,
+        password: this.userDetail.password,
         age: this.userDetail.age,
-        phonenumber: this.userDetail.phonenumber
+        email: this.userDetail.email,
+        phonenumber: this.userDetail.phonenumber,
       });
     });
   }
