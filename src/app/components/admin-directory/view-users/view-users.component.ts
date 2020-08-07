@@ -6,11 +6,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-view-users',
   templateUrl: './view-users.component.html',
-  styleUrls: ['./view-users.component.css']
+  styleUrls: ['./view-users.component.css'],
 })
 export class ViewUsersComponent implements OnInit {
   userList: User[];
@@ -22,15 +23,20 @@ export class ViewUsersComponent implements OnInit {
     'email',
     'age',
     'phonenumber',
-    'actions'
+    'actions',
   ];
   dataSource = new MatTableDataSource<User>(this.userList);
   selection = new SelectionModel<User>(true, []);
   selectedValue;
+  durationTimeInSeconds = 5;
   userId;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(private UserServices: UserService, private router: Router) { }
+  constructor(
+    private UserServices: UserService,
+    private router: Router,
+    private snakBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -75,28 +81,44 @@ export class ViewUsersComponent implements OnInit {
   navAddUser(): void {
     this.router.navigate(['admin/add-user']);
   }
-// Get users 
+  // Get users
   getUsers(): void {
     this.UserServices.getUsers().subscribe((users) => {
       this.userList = users;
       this.dataSource.data = this.userList;
     });
   }
-// Delete user
-deleteUser(userId): void {
-  console.log('useriddd', userId);
-  this.UserServices.deleteUser(userId).subscribe(() => {
-    this.getUsers();
-    console.log('deleted');
-  });
-}
-// Edit user by id
-edituser(userId): void {
-  console.log('editId', userId);
-  this.router.navigate(['admin/updateuser/', userId]);
+  // Delete user
+  deleteUser(userId): void {
+    console.log('useriddd', userId);
+    this.UserServices.deleteUser(userId).subscribe(() => {
+      this.getUsers();
+      this.snakBar.openFromComponent(UserDeletedMessageComponent, {
+        duration: this.durationTimeInSeconds * 1000,
+      });
+      console.log('deleted');
+    });
+  }
+  // Edit user by id
+  edituser(userId): void {
+    console.log('editId', userId);
+    this.router.navigate(['admin/updateuser/', userId]);
+  }
+
+  navViewUser(): void {
+    this.router.navigate(['admin/view-users']);
+  }
 }
 
-navViewUser(): void {
-  this.router.navigate(['admin/view-users']);
-}
-}
+@Component({
+  selector: 'app-user-deleted',
+  templateUrl: 'user-deleted-message.html',
+  styles: [
+    `
+      .success-message {
+        color: hotpink;
+      }
+    `,
+  ],
+})
+export class UserDeletedMessageComponent {}

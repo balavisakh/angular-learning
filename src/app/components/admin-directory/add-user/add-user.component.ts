@@ -21,8 +21,8 @@ export class AddUserComponent implements OnInit {
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
     password: ['', Validators.required],
-    age: ['', Validators.required],
-    email: ['', Validators.required],
+    age: ['', [Validators.required, Validators.max(200)]],
+    email: ['', [Validators.required, Validators.email]],
     phonenumber: ['', Validators.required],
   });
   ngOnInit(): void {}

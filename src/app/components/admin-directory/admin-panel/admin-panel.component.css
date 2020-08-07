@@ -29,4 +29,13 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
+
+  .side-navbar {
+    box-shadow: 2px -7px 9px 2px #867979 !important;
+  }
+
+  .side-nav-list {
+    color: #673ab7 !important;
+  }
+
   

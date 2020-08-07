@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-content>
     <div [formGroup]="form">
-      <h2>Update User here</h2>
+      <h2>Update user</h2>
       <mat-form-field class="full-width-input">
         <mat-label>Enter your firstname</mat-label>
         <input
@@ -11,7 +11,7 @@
           required
         />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid name
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
@@ -23,7 +23,7 @@
           required
         />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid name
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
@@ -35,27 +35,29 @@
           required
         />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid password
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
         <mat-label>Enter your age</mat-label>
         <input
           matInput
-          placeholder="password"
+          placeholder="age"
           formControlName="age"
-          type="number"
+          type="text"
           required
+          maxlength="3"
+          pattern="[0-9]+"
         />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid age
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
         <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="email" formControlName="email" required />
+        <input matInput type="email" placeholder="email" formControlName="email" required />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid email
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
@@ -64,11 +66,13 @@
           matInput
           placeholder="phonenumber"
           formControlName="phonenumber"
-          type="number"
+          type="text"
           required
+          maxlength="10" 
+          pattern="\d{10}"
         />
         <mat-error>
-          Please provide a valid username
+          Please provide a valid phonenumber
         </mat-error>
       </mat-form-field>
       <button

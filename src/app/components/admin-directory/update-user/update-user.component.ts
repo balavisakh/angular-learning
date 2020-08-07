@@ -3,14 +3,22 @@ import { UserService } from '../../../services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../../entities/user.entity';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.css']
+  styleUrls: ['./update-user.component.css'],
 })
 export class UpdateUserComponent implements OnInit {
-  constructor(private userService: UserService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router) { }
+  durationInSeconds = 5;
+  constructor(
+    private userService: UserService,
+    private fb: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private snakBar: MatSnackBar
+  ) {}
   userId;
   form;
   userDetail;
@@ -19,11 +27,11 @@ export class UpdateUserComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       password: ['', Validators.required],
-      age: ['', Validators.required],
-      email: ['', Validators.required],
+      age: ['', [Validators.required, Validators.max(200)]],
+      email: ['', [Validators.required, Validators.email]],
       phonenumber: ['', Validators.required],
     });
-}
+  }
 
   getParams(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -55,9 +63,23 @@ export class UpdateUserComponent implements OnInit {
     console.log('userId', this.userId);
     console.log('userUpdateValue', this.form.value);
     const userData = this.form.value;
-    this.userService.updateUser(this.userId , userData).subscribe(() => {
+    this.userService.updateUser(this.userId, userData).subscribe(() => {
       console.log('user updated');
+      this.snakBar.openFromComponent(UserUpdatedMessageComponent, {duration: this.durationInSeconds * 1000});
       this.router.navigate(['admin/user-management']);
     });
   }
 }
+
+@Component({
+  selector: 'app-user-updated',
+  templateUrl: 'user-updated-message.html',
+  styles: [
+    `
+      .success-message {
+        color: hotpink;
+      }
+    `,
+  ],
+})
+export class UserUpdatedMessageComponent {}
