@@ -15,6 +15,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { LoginComponent } from './components/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, LoginComponent, PageNotFoundComponent],
@@ -32,6 +33,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatIconModule,
     MatBadgeModule,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

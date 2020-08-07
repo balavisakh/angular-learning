@@ -10,4 +10,8 @@
   background-color: rgba(0,0,0,.26);;
 }
 
+.logo {
+  width: 100px !important;
+  height: 50px !important;
+}
 

@@ -1,50 +1,85 @@
 <mat-card>
-    <mat-card-content>
-      <div [formGroup]='form'>
-        <h2>Update User here</h2>
-        <mat-form-field class="full-width-input">
-          <mat-label>Enter your firstname</mat-label>
-          <input matInput placeholder="firstname" formControlName="firstname" required>
-          <mat-error>
-            Please provide a valid username
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width-input">
-            <mat-label>Enter your lastname</mat-label>
-            <input matInput placeholder="lastname" formControlName="lastname" required>
-            <mat-error>
-              Please provide a valid username
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width-input">
-            <mat-label>Enter your password</mat-label>
-            <input matInput placeholder="password" formControlName="password" required>
-            <mat-error>
-              Please provide a valid username
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width-input">
-            <mat-label>Enter your age</mat-label>
-            <input matInput placeholder="password" formControlName="age" type="number" required>
-            <mat-error>
-              Please provide a valid username
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width-input">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="email" formControlName="email" required>
-            <mat-error>
-              Please provide a valid username
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width-input">
-            <mat-label>Enter your phonenumber</mat-label>
-            <input matInput placeholder="phonenumber" formControlName="phonenumber" type="number" required>
-            <mat-error>
-              Please provide a valid username
-            </mat-error>
-          </mat-form-field>
-        <button (click)='updateuser()' [disabled]='!form.valid' class="add-user-button" mat-raised-button color="primary">Update User</button>
-      </div>
-    </mat-card-content>
-  </mat-card>
+  <mat-card-content>
+    <div [formGroup]="form">
+      <h2>Update User here</h2>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your firstname</mat-label>
+        <input
+          matInput
+          placeholder="firstname"
+          formControlName="firstname"
+          required
+        />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your lastname</mat-label>
+        <input
+          matInput
+          placeholder="lastname"
+          formControlName="lastname"
+          required
+        />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your password</mat-label>
+        <input
+          matInput
+          placeholder="password"
+          formControlName="password"
+          required
+        />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your age</mat-label>
+        <input
+          matInput
+          placeholder="password"
+          formControlName="age"
+          type="number"
+          required
+        />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="email" formControlName="email" required />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <mat-label>Enter your phonenumber</mat-label>
+        <input
+          matInput
+          placeholder="phonenumber"
+          formControlName="phonenumber"
+          type="number"
+          required
+        />
+        <mat-error>
+          Please provide a valid username
+        </mat-error>
+      </mat-form-field>
+      <button
+        (click)="updateuser()"
+        [disabled]="!form.valid"
+        class="add-user-button"
+        mat-raised-button
+        color="primary"
+      >
+        Update User
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
