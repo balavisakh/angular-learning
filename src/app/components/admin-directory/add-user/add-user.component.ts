@@ -32,7 +32,7 @@ export class AddUserComponent implements OnInit {
     if (this.addUserForm.valid) {
       const data = this.addUserForm.value;
       this.userService.addUser(data).subscribe(() => {
-        this.router.navigate(['admin/user-management']);
+        this.router.navigate(['admin/dashboard/user-management']);
         this.snakBar.openFromComponent(UserAddedMessageComponent, { duration: this.durationInSeconds * 1000});
         this.addUserForm.reset();
       });

@@ -62,7 +62,7 @@ export class UpdateUserComponent implements OnInit {
     const userData = this.form.value;
     this.userService.updateUser(this.userId, userData).subscribe(() => {
       this.snakBar.openFromComponent(UserUpdatedMessageComponent, {duration: this.durationInSeconds * 1000});
-      this.router.navigate(['admin/user-management']);
+      this.router.navigate(['admin/dashboard/user-management']);
     });
   }
 }
