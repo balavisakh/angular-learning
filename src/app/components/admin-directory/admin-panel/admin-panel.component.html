@@ -6,6 +6,9 @@
         <p class="bg-dark text-white display-1">
           {{ users && users.length }}
         </p>
+        <p *ngIf='!users' class="bg-dark text-white display-1">
+          0
+        </p>
       </mat-card>
     </div>
   </div>
