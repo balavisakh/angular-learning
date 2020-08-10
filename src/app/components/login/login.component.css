@@ -11,3 +11,11 @@ mat-form-field {
 .login-button{
   width: 100%;
 }
+
+.login-alert-dialog {
+  padding: 20px;
+}
+
+.login-error-icon {
+  font-size: 35px;
+}

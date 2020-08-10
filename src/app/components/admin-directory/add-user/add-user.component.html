@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <div [formGroup]="form">
+    <div [formGroup]="addUserForm">
       <h2>Add user</h2>
       <mat-form-field class="full-width-input">
         <mat-label>Enter your firstname</mat-label>
@@ -33,6 +33,7 @@
           placeholder="password"
           formControlName="password"
           required
+          type="password"
         />
         <mat-error>
           Please provide a valid password
@@ -83,7 +84,7 @@
       </mat-form-field>
       <button
         (click)="addUser()"
-        [disabled]="!form.valid"
+        [disabled]="!addUserForm.valid"
         class="add-user-button"
         mat-raised-button
         color="primary"

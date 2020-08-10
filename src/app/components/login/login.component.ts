@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       this.userService.sendValue(this.adminRole);
       this.router.navigate(['admin']);
     } else {
-      console.log('Username and password is wrong');
       this.dialog.open(LoginAlertMessageComponent);
     }
   }
@@ -45,5 +44,6 @@ export class LoginComponent implements OnInit {
 @Component({
   selector: 'app-login-alert',
   templateUrl: 'login-alert-message.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginAlertMessageComponent {}

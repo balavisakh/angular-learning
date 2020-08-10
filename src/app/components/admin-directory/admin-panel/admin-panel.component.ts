@@ -1,5 +1,4 @@
-import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 
 @Component({
@@ -7,8 +6,7 @@ import { UserService } from '../../../services/user.service';
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.css']
 })
-export class AdminPanelComponent implements OnInit, OnDestroy {
-  mobileQuery: MediaQueryList;
+export class AdminPanelComponent implements OnInit {
   selectedUsers: any[];
   users;
 
@@ -21,13 +19,9 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
   //      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
   //      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
-  private _mobileQueryListener: () => void;
 
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private userService: UserService) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+  constructor(private userService: UserService) {
   }
 
 
@@ -45,9 +39,6 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
     })
-  }
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 }

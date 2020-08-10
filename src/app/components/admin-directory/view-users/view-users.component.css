@@ -11,3 +11,11 @@ table {
     float: right;
 }
   
+@media (max-width: 576px) {
+  td, th {
+    padding: 10px !important;
+  }
+  .mat-elevation-z8 {
+    overflow-x: scroll !important;
+  }
+}

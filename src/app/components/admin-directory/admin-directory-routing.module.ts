@@ -7,30 +7,40 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ShowUsersComponent } from './show-users/show-users.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const routes: Routes = [
-  { path: '', component: AdminDirectoryComponent},
+{path: '', redirectTo: 'dashboard/user-management', pathMatch: 'full'},
+{
+  path: 'dashboard',
+    component: AdminDirectoryComponent,
+    children: [  {
+        path: 'admin-panel',
+        component: AdminPanelComponent,
+      },
+      {
+      path: 'user-management',
+      component: UserManagementComponent
+    },
+    {
+      path: 'updateuser/:id',
+      component: UpdateUserComponent
+    },
+    {
+      path: 'add-user',
+      component: AddUserComponent
+    },
+    {
+      path: 'view-users',
+      component: ShowUsersComponent
+    },
   {
-    path: 'admin-panel',
-    component: AdminPanelComponent,
-  },
-  {
-    path: 'user-management',
-    component: UserManagementComponent
-  },
-  {
-    path: 'updateuser/:id',
-    component: UpdateUserComponent
-  },
-  {
-    path: 'add-user',
-    component: AddUserComponent
-  },
-  {
-    path: 'view-users',
-    component: ShowUsersComponent
+    path: 'user-detail/:id',
+    component: UserDetailComponent
+  }]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

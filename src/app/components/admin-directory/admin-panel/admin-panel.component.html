@@ -1,46 +1,12 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar
-    *ngIf="mobileQuery.matches"
-    color="secondary"
-    class="example-toolbar"
-  >
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar>
-
-  <mat-sidenav-container
-    class="example-sidenav-container"
-    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-  >
-    <mat-sidenav
-      opened
-      #snav
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
-      [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="112"
-      class="side-navbar"
-    >
-      <mat-nav-list>
-        <button mat-raised-button routerLink="user-management">
-        <a mat-list-item class="side-nav-list"><mat-icon class="mr-2">supervised_user_circle</mat-icon>User Management</a>
-      </button>
-      </mat-nav-list>
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-      <div class="container-fluid mt-2">
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <mat-card class="text-center">
-              <h1>Number Of Users</h1>
-              <p class="bg-dark text-white display-1">
-                {{ users && users.length }}
-              </p>
-            </mat-card>
-          </div>
-        </div>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <mat-card class="text-center">
+        <h1>Number Of Users</h1>
+        <p class="bg-dark text-white display-1">
+          {{ users && users.length }}
+        </p>
+      </mat-card>
+    </div>
+  </div>
 </div>

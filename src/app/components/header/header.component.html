@@ -14,7 +14,7 @@
      (click)='logout()' class="ml-2" *ngIf='afterLogin'>
       <span class="header-btn">Logout</span>
     </button>
-    <button *ngIf='afterLogin' mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button *ngIf='afterUserLogin' mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon matBadge="{{ users && users.length }}" matBadgeColor="warn">notifications</mat-icon>
     </button>
   </mat-toolbar-row>

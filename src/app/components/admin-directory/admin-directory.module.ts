@@ -21,9 +21,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { ShowUsersComponent } from './show-users/show-users.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SideNavComponent} from '../admin-directory/side-nav/side-nav.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AddUserComponent,
     ViewUsersComponent,
     UpdateUserComponent,
-    SideNavComponent,
     ShowUsersComponent,
+    SideNavComponent,
+    UserDetailComponent
   ],
   imports: [
     CommonModule,

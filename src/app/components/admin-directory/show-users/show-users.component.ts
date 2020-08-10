@@ -16,7 +16,6 @@ export class ShowUsersComponent implements OnInit {
   getUserDetails(): void {
     this.userService.getUsers().subscribe((user) => {
       this.userDetails = user;
-      console.log('userdtails', this.userDetails);
     });
   }
 }

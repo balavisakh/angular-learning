@@ -82,7 +82,6 @@ export class UserListingComponent implements OnInit {
     this.UserServices.getUsers().subscribe((users) => {
       this.userList = users;
       this.dataSource.data = this.userList;
-      console.log('users lists', this.userList);
     });
   }
 }

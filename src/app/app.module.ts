@@ -15,10 +15,20 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { LoginComponent } from './components/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginAlertMessageComponent } from './components/login/login.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, PageNotFoundComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    LoginAlertMessageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +43,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatBadgeModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

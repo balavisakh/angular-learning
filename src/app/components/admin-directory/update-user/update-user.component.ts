@@ -36,7 +36,6 @@ export class UpdateUserComponent implements OnInit {
   getParams(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.userId = params.id;
-      console.log('params id', this.userId);
     });
     this.initializeForm();
   }
@@ -60,11 +59,8 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateuser(): void {
-    console.log('userId', this.userId);
-    console.log('userUpdateValue', this.form.value);
     const userData = this.form.value;
     this.userService.updateUser(this.userId, userData).subscribe(() => {
-      console.log('user updated');
       this.snakBar.openFromComponent(UserUpdatedMessageComponent, {duration: this.durationInSeconds * 1000});
       this.router.navigate(['admin/user-management']);
     });

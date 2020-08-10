@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
     private router: Router,
     private snakBar: MatSnackBar
   ) {}
-  form = this.fb.group({
+  addUserForm = this.fb.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
     password: ['', Validators.required],
@@ -25,17 +25,16 @@ export class AddUserComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     phonenumber: ['', Validators.required],
   });
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   addUser(): void {
-    if (this.form.valid) {
-      const data = this.form.value;
+    if (this.addUserForm.valid) {
+      const data = this.addUserForm.value;
       this.userService.addUser(data).subscribe(() => {
         this.router.navigate(['admin/user-management']);
-        console.log('user added');
         this.snakBar.openFromComponent(UserAddedMessageComponent, { duration: this.durationInSeconds * 1000});
-        console.log(this.form.value);
-        this.form.reset();
+        this.addUserForm.reset();
       });
     }
   }

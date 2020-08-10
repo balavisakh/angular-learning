@@ -16,7 +16,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ViewUsersComponent implements OnInit {
   userList: User[];
   displayedColumns: string[] = [
-    'select',
     'firstname',
     'lastname',
     'password',
@@ -79,7 +78,7 @@ export class ViewUsersComponent implements OnInit {
     }
   }
   navAddUser(): void {
-    this.router.navigate(['admin/add-user']);
+    this.router.navigate(['admin/dashboard/add-user']);
   }
   // Get users
   getUsers(): void {
@@ -90,23 +89,23 @@ export class ViewUsersComponent implements OnInit {
   }
   // Delete user
   deleteUser(userId): void {
-    console.log('useriddd', userId);
     this.UserServices.deleteUser(userId).subscribe(() => {
       this.getUsers();
       this.snakBar.openFromComponent(UserDeletedMessageComponent, {
         duration: this.durationTimeInSeconds * 1000,
       });
-      console.log('deleted');
     });
   }
   // Edit user by id
   edituser(userId): void {
-    console.log('editId', userId);
-    this.router.navigate(['admin/updateuser/', userId]);
+    this.router.navigate(['admin/dashboard/updateuser', userId]);
   }
 
   navViewUser(): void {
-    this.router.navigate(['admin/view-users']);
+    this.router.navigate(['admin/dashboard/view-users']);
+  }
+  getUserById(selectedId): void {
+    this.router.navigate(['admin/dashboard/user-detail', selectedId]);
   }
 }
 

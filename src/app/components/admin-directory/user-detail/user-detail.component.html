@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 mt-4">
+      <h1 class="text-center">User Detail</h1>
+      <mat-card>
+        <ng-container *ngIf="userDetail">
+          <p>First name: {{ userDetail.firstname }}</p>
+          <p>Last name: {{ userDetail.lastname }}</p>
+          <p>Age: {{ userDetail.age }}</p>
+          <p>Email: {{ userDetail.email }}</p>
+          <p>Phone Number: {{ userDetail.phonenumber }}</p>
+        </ng-container>
+      </mat-card>
+    </div>
+  </div>
+</div>
